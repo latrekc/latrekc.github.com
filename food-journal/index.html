@@ -1,0 +1,84 @@
+<!doctype>
+<html>
+	<head>
+		<title>Food calendar</title>
+		<style>
+			html, body {
+				padding: 0;
+				margin: 0;
+				background: #fff;
+				font-family: 'San Francisco', Helvetica, Arial, Tahoma, Verdana, sans-serif;
+				color: #fff;
+			}
+
+			.photo {
+				width: 480px;
+				height: 640px;
+			}
+
+			.day {
+				margin: 0;
+				padding: 10px 20px;
+				color: #000;
+				clear: both;
+			}
+
+			.frame {
+				margin: 0 10px 20px;
+				float: left;
+			}
+			
+			.caption {
+				position: absolute;
+				padding: 10px;
+				margin: 10px;
+				background: rgba(0,0,0,0.5);
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="./list.js"></script>
+
+		<script>
+			let prev_day;
+			let RE = /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/;
+			let body = document.getElementsByTagName('body')[0];
+
+			function addDay(day) {
+				let header = document.createElement('h1');
+				header.innerHTML = day;
+				header.className = 'day';
+				body.appendChild(header);
+			}
+
+			function addPhoto(name, time) {
+				let frame = document.createElement('div');
+				frame.className = 'frame';
+
+				let photo = document.createElement('img');
+				photo.className = 'photo';
+				photo.src = `./photos/${name}`;
+
+				let caption = document.createElement('h2');
+				caption.innerHTML = time;
+				caption.className = 'caption';
+
+				frame.appendChild(caption);
+				frame.appendChild(photo);
+				body.appendChild(frame);
+			}
+
+			list.forEach((name) => {
+				let tmp = name.match(RE);
+				let day = `${tmp[1]}-${tmp[2]}-${tmp[3]}`;
+
+				if(!prev_day || prev_day !== day) {
+					addDay(day);
+					prev_day = day;
+				}
+				addPhoto(name, `${tmp[4]}:${tmp[5]}`);
+			});
+		</script>
+	</body>
+</html>

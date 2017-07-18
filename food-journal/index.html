@@ -69,7 +69,7 @@
 				body.appendChild(frame);
 			}
 
-			list.forEach((name) => {
+			list.reverse().forEach((name) => {
 				let tmp = name.match(RE);
 				let day = `${tmp[1]}-${tmp[2]}-${tmp[3]}`;
 

@@ -1,0 +1,8 @@
+{
+  "name": "latrekc.github.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:latrekc/latrekc.github.com.git",
+  "author": "Stanislav Tugovikov <stanislav.t@threadsstyling.com>",
+  "license": "MIT"
+}

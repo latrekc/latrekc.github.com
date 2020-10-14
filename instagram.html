@@ -78,7 +78,13 @@
         root.appendChild(dd);
       };
 
-      document.cookie = 'test=1 ;max-age=31536000';
+      const old = document.cookie.match(/test=(\d+)/);
+      if (old) {
+        document.cookie = `test=${parseInt(old[1],10) + 1} ;max-age=31536000`;
+
+      } else {
+        document.cookie = 'test=1 ;max-age=31536000';
+      }
 
       append('Cookies:', document.cookie);
     </script>

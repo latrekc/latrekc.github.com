@@ -1,0 +1,28 @@
+<!doctype>
+<html>
+  <head>
+    <title>Test Instagram Oauth</title>
+  </head>
+
+  <body>
+    <h1>Debug OAuth</h1>
+
+    <dl id="debug"></dl>
+
+    <script>
+      const root = document.getElementById('debug');
+      const append = (field, value) => {
+        const dt = document.createElement('dt');
+        dt.innerText = field;
+
+        const dd = document.createElement('dd');
+        dd.innerText = value;
+
+        root.appendChild(dt);
+        root.appendChild(dd);
+      };
+
+      append('Cookies:', document.cookie);
+    </script>
+  </body>
+</html>

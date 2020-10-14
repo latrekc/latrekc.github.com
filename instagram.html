@@ -77,6 +77,7 @@
         root.appendChild(dt);
         root.appendChild(dd);
       };
+      append('Cookies:', document.cookie);
 
       const old = document.cookie.match(/test=(\d+)/);
       if (old) {
@@ -85,8 +86,6 @@
       } else {
         document.cookie = 'test=1 ;max-age=31536000';
       }
-
-      append('Cookies:', document.cookie);
     </script>
 
     <div class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>

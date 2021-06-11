@@ -1,34 +1,243 @@
 <!doctype>
 <html>
 	<head>
-		<title>stanislav.tugovikov.ru</title>
+		<title>Stanislav Tugovikov</title>
 
-		<link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="/icons/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+		<link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/favicons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
 		<link rel="manifest" href="/manifest.json">
 		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+		<meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
+
+		<style>
+			:root {
+				--background-color: #F8FFF8;
+				--side-color: #003A00;
+				--accent-color: #79CD5D;
+				--main-color: #00689B;
+
+				--dark-color: rgba(0,0,0,0.15);
+				--light-color: #fff;
+			}
+
+			.shadow {
+				box-shadow:
+					0 1px 1px var(--dark-color), 
+					0 2px 2px var(--dark-color), 
+					0 4px 4px var(--dark-color), 
+					0 8px 8px var(--dark-color);
+			}
+			.text-shadow {
+				text-shadow:
+					0 1px 1px rgba(0,0,0,0.15), 
+					0 2px 2px rgba(0,0,0,0.15), 
+					0 4px 4px rgba(0,0,0,0.15), 
+					0 8px 8px rgba(0,0,0,0.15);
+			}
+
+			html, body {
+				padding: 0;
+				margin: 0;
+				background-color: var(--background-color);
+				color: var(--main-color);
+				width: 100%;
+				height: 100%;
+				font-family: 'Roboto Mono', monospace;
+			}
+			a {
+				color: var(--accent-color);
+			}
+			a:hover {
+				color: var(--accent-color);
+				text-decoration: none;
+			}
+			.header {
+				height: 15em;
+				display: flex;
+				padding: 1em;
+				position: relative;
+			}
+			.header:before {
+				content: "";
+				position: absolute;
+				width: 100%;
+				left: 0%;
+				height: 1em;
+				top: 50%;
+				background-image: linear-gradient(to right, #00689b, #007faa, #0095ab, #00a99e, #00bb87, #31b471, #48ad5b, #59a645, #428933, #2c6e22, #165311, #003a00);
+				background-position: 0 0;
+				background-size: 300% 100%;
+				background-repeat: no-repeat;
+				animation: header-background 18s ease infinite;
+			}
+
+			@keyframes header-background { 
+				0%{background-position:0% 50%; }
+				33%{background-position:50% 50%}
+				50%{background-position:100% 50%}
+				66%{background-position:50% 50%}
+				100%{background-position:0% 50%}
+			}
+
+
+			.header__side {
+				display: flex;
+				flex: auto;
+				flex-direction: column;
+				justify-content: stretch;
+			}
+
+			.photo-image {
+				height: 100%;
+				z-index: 1;
+				border-radius: 50%;
+				background-color: var(--light-color);
+				margin: 1em 0;
+			}
+			.card {
+				z-index: 1;
+				text-align: right;
+				flex: auto;
+			}
+			.card__title {
+				display: block;
+				font-size: 3em;
+				font-weight: bold;
+				color: var(--main-color);
+				margin: 0;
+			}
+			.card__position {
+				display: block;
+				margin: 0;
+				font-size: 2em;
+				color: var(--main-color);
+			}
+
+			.contacts {
+				margin: 1em;
+				display: flex;
+				flex-direction:row-reverse;
+				list-style: none;
+			}
+			.contacts__item {
+				margin: 0 1em;
+			}
+
+			.footer {
+				padding: 2em;
+				text-align: right;
+			}
+
+			.icon {
+				display: block;
+				width: 3em;
+				height: 3em;
+				overflow: hidden;
+				text-indent: 3em;
+				background-position: 0 0;
+				background-repeat: none;
+				background-size: 100% 100%;
+				background-color: pink;
+			}
+			.facebook {
+				background-image: url(./icons/facebook.svg);
+			}
+			.github {
+				background-image: url(./icons/github.svg);
+			}
+			.instagram {
+				background-image: url(./icons/instagram.svg);
+			}
+			.linkedin {
+				background-image: url(./icons/linkedin.svg);
+			}
+			.telegram {
+				background-image: url(./icons/telegram.svg);
+			}
+			.twitter {
+				background-image: url(./icons/twitter.svg);
+			}
+			.whatsapp {
+				background-image: url(./icons/whatsapp.svg);
+			}
+			.email {
+				background-image: url(./icons/email.svg);
+			}
+
+		</style>
 	</head>
 
 	<body>
-		<h1>stanislav.tugovikov.ru</h1>
-		
-		<ul>
-			<li>
-				<a href="/food-journal/">Дневник еды</a>
-			</li>
-		</ul>
+		<div class="header">
+			<img class="photo-image shadow" src="./photo2020.png" alt="Photo of Stanislav Tugovikov" />
+
+			<div class="header__side">
+				<div class="card">
+					<h1 class="card__title">Stanislav Tugovikov</h1>
+					<p class="card__position">Developer, usually a web developer</p>
+				</div>
+
+				<ul class="contacts">
+					<li class="contacts__item">
+						<a class="icon facebook" href="https://www.facebook.com/latrekc">facebook</a>
+					</li>
+
+					<li class="contacts__item">
+						<a class="icon github" href="https://www.github.com/latrekc">github</a>
+					</li>
+
+					<li class="contacts__item">
+						<a class="icon instagram" href="https://www.instagram.com/latrekc">instagram</a>
+					</li>
+
+					<li class="contacts__item">
+						<a class="icon linkedin" href="https://www.linkedin.com/in/stanislav-tugovikov/">linkedin</a>
+					</li>
+
+					<li class="contacts__item">
+						<a class="icon telegram" href="https://t.me/latrekc">telegram</a>
+					</li>
+
+					<li class="contacts__item">
+						<a class="icon twitter" href="https://www.twitter.com/latrekc">twitter</a>
+					</li>
+
+					<li class="contacts__item">
+						<a class="icon whatsapp" href="https://wa.me/447956511492">whatsapp</a>
+					</li>
+					<li class="contacts__item">
+						<a class="icon email" href="mailto:stanislav@tugovikov.ru">email</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+		</div>
+	
+		<script>
+			document.getElementsByTagName('body')[0].addEventListener('click', (evt) => {
+				if(evt.target.tagName.toLowerCase() === 'a') {
+					window.open(evt.target.href);
+					evt.preventDefault();
+				}
+			});
+		</script>
 	</body>
 </html>

@@ -26,13 +26,15 @@
 
 		<style>
 			:root {
-				--background-color: #F8FFF8;
 				--side-color: #003A00;
 				--accent-color: #79CD5D;
 				--main-color: #00689B;
 
 				--dark-color: rgba(0,0,0,0.15);
 				--light-color: #fff;
+			}
+			* {
+				box-sizing: border-box;
 			}
 
 			.shadow {
@@ -53,7 +55,7 @@
 			html, body {
 				padding: 0;
 				margin: 0;
-				background-color: var(--background-color);
+				background-color: var(--light-color);
 				color: var(--main-color);
 				width: 100%;
 				height: 100%;
@@ -67,18 +69,17 @@
 				text-decoration: none;
 			}
 			.header {
-				height: 15em;
 				display: flex;
-				padding: 1em;
 				position: relative;
+				align-items: flex-end;
 			}
 			.header:before {
 				content: "";
 				position: absolute;
 				width: 100%;
 				left: 0%;
-				height: 1em;
-				top: 50%;
+				height: 5em;
+				bottom: 0;
 				background-image: linear-gradient(to right, #00689b, #007faa, #0095ab, #00a99e, #00bb87, #31b471, #48ad5b, #59a645, #428933, #2c6e22, #165311, #003a00);
 				background-position: 0 0;
 				background-size: 300% 100%;
@@ -103,28 +104,38 @@
 			}
 
 			.photo-image {
-				height: 100%;
-				z-index: 1;
-				border-radius: 50%;
-				background-color: var(--light-color);
-				margin: 1em 0;
+				object-fit: contain;
+				max-width:100%;
+				max-height:100%;
 			}
+			.photo-image__wrapper {
+				z-index: 1;
+				min-height: 30em;
+				max-height: 50%;
+				display: flex;
+				align-items: flex-end;
+			}
+
 			.card {
 				z-index: 1;
 				text-align: right;
 				flex: auto;
+				margin: 1em;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 			}
 			.card__title {
 				display: block;
-				font-size: 3em;
+				font-size: 5em;
 				font-weight: bold;
 				color: var(--main-color);
 				margin: 0;
 			}
-			.card__position {
+			.card__about {
 				display: block;
-				margin: 0;
-				font-size: 2em;
+				margin: 1em;
+				font-size: 1.5em;
 				color: var(--main-color);
 			}
 
@@ -133,6 +144,7 @@
 				display: flex;
 				flex-direction:row-reverse;
 				list-style: none;
+				z-index: 2;
 			}
 			.contacts__item {
 				margin: 0 1em;
@@ -152,7 +164,6 @@
 				background-position: 0 0;
 				background-repeat: none;
 				background-size: 100% 100%;
-				background-color: pink;
 			}
 			.facebook {
 				background-image: url(./icons/facebook.svg);
@@ -183,13 +194,16 @@
 	</head>
 
 	<body>
-		<div class="header">
-			<img class="photo-image shadow" src="./photo2020.png" alt="Photo of Stanislav Tugovikov" />
+		<div class="header shadow">
+			<div class="photo-image__wrapper">
+				<img class="photo-image" src="./photo2017.png" alt="Photo of Stanislav Tugovikov" />
+			</div>
 
 			<div class="header__side">
 				<div class="card">
 					<h1 class="card__title">Stanislav Tugovikov</h1>
-					<p class="card__position">Developer, usually a web developer</p>
+					<p class="card__about">I develop high load web projects with complex UI since 2003. I managed teams of developers and teams of teams.</p>
+					<p class="card__about">I have a passion for solving complex problems, and I always pay attention to the development of my employees.</p>
 				</div>
 
 				<ul class="contacts">
@@ -225,6 +239,16 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+
+		<div class="experience">
+			<h2 class="experience__title">Experience</h2>
+
+			<ul class="jobs">
+				<li class="jobs__item">
+					Threads Styling
+				</li>
+			</ul>
 		</div>
 
 		<div class="footer">
